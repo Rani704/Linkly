@@ -21,7 +21,7 @@ A simple and modern **URL shortener** built with **Next.js** and **React**, allo
 ## 📸 Screenshots
 
 **Homepage / Input Form**  
-![Homepage Screenshot](public/Project Linkly.png)  
+![Homepage Screenshot](public/Linkly(2).png)  
 
 **About Section**  
 ![About Screenshot](public/about_linkly.png)  
