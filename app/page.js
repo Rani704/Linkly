@@ -1,33 +1,55 @@
 import Image from "next/image";
-import { Poppins } from "next/font/local";
+import { Poppins } from "next/font/google";
 import Link from "next/link";
 
 const poppins = Poppins({
-  src: "./fonts/Poppins-ExtraBold.ttf",
-  variable: "--font-poppins",
-  weight: "100 900",
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
 });
 
 export default function Home() {
   return (
-   <main className="bg-purple-100">
-   <section className="grid grid-cols-2 h-[50vh]">
-    <div className="flex flex-col gap-4 items-center justify-center">
-  <p className={`text-3xl font-bold ${poppins.variable} text-center`}>
-    The best URL shortener in the market
-    </p>
-    <p className="px-56 text-center">
-    We are the straight forward solution for your URL shortening needs.We provide a simple and efficient way to shorten your URLs, making them easier to share and manage. 
-    </p>
-      <div className='flex gap-3 justify-start'>
-          <Link href="/shorten"><button className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 font-bold text-white'>Try Now</button></Link>
-          <Link href="https://github.com/Rani704"><button className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 font-bold text-white'>GitHub</button></Link>
+    <main className="bg-gradient-to-r from-purple-100 to-purple-200 min-h-screen">
+      <section className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center py-20 px-6">
+        {/* LEFT */}
+        <div className="flex flex-col gap-6">
+          <h1
+            className={`text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight ${poppins.className}`}
+          >
+            The best URL shortener <br /> in the market
+          </h1>
+
+          <p className="text-lg text-gray-700 max-w-lg">
+            Simplify your links, share smarter, and manage everything in one
+            place. Fast, reliable, and built for modern users.
+          </p>
+
+          <div className="flex gap-4 mt-4">
+            <Link href="/shorten">
+              <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg transition hover:scale-105">
+                Try Now
+              </button>
+            </Link>
+
+            <Link href="https://github.com/Rani704/Linkly">
+              <button className="border border-purple-600 text-purple-600 px-6 py-3 rounded-xl font-semibold hover:bg-purple-600 hover:text-white transition">
+                GitHub
+              </button>
+            </Link>
+          </div>
         </div>
-    </div>
-    <div className="flex justify-start relative">
-      <Image alt="Vector Image" src={"/vector.svg"} fill={true}></Image>
-    </div>
-   </section>
-   </main>
+
+        {/* RIGHT */}
+        <div className="relative w-full h-[400px] flex justify-center items-center">
+          <Image
+            alt="Vector Image"
+            src="/vector.svg"
+            fill
+            className="object-contain drop-shadow-2xl"
+          />
+        </div>
+      </section>
+  
+    </main>
   );
 }

@@ -5,7 +5,7 @@ import clientPromise from "@/lib/mongodb"
 export default async function Page({ params }) {
     const shorturl = (await params).shorturl
 
-    const client = await clientPromise;
+  const client = await clientPromise;
     const db = client.db("linkly")
     const collection = db.collection("url")
 
@@ -16,7 +16,7 @@ export default async function Page({ params }) {
     }
     else{
         redirect(`${process.env.NEXT_PUBLIC_HOST}`)
-    }
+  }
 
     return <div>My Post: {url}</div>
-  }
+}
